@@ -15,6 +15,25 @@
                     @endif
 
                     You are logged in!
+
+                    <h2>{{ $judul }}</h2>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Emaik</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($pengguna as $baris)
+                            <tr>
+                                <td>{{ $baris->name }}</td>
+                                <td>{{ $baris->email }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

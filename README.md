@@ -4,8 +4,8 @@ Silahkan Lihat sesuai Branch !
 
 # Outline  
 
-1. composer require laravel/ui "1.*"
-2. php artisan ui bootstrap --auth
-3. npm install && npm run dev
-4. php artisan migrate
-5. Register & Login
+1. Reset Password dan MVC-R
+2. SMTP gmail dan Mailtrap (Untuk Testing)
+3. Ambil data di Controller
+4. Gunakan Model untuk berkomunikasi dengan Database
+5. Transmisikan data ke View (Table View)
