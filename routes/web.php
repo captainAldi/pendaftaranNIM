@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('user/index','UserController@index');
+    Route::get('user/tambah','UserController@tambah');
+    Route::post('user/simpan','UserController@simpan');
+});
+
