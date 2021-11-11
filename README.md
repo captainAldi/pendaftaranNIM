@@ -4,5 +4,5 @@ Silahkan Lihat sesuai Branch !
 
 # Outline  
 
-1. Tampil Data
-2. Add Data
+1. Ubah Data
+2. Hapus Data

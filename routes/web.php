@@ -23,5 +23,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('user/index','UserController@index');
     Route::get('user/tambah','UserController@tambah');
     Route::post('user/simpan','UserController@simpan');
+    Route::get('user/edit/{id}','UserController@edit');
+    Route::put('user/update/{id}','UserController@update');
+    Route::get('user/hapus/{id}','UserController@hapus');
+
 });
 

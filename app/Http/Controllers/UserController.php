@@ -39,5 +39,39 @@ class UserController extends Controller
         return back()->with('pesan', 'data sudah disimpan');
     }
 
+    public function edit($id)
+    {
+        $data['objek'] = \App\User::findOrFail($id);
+        $data['action'] = ['UserController@update', $id];
+        $data['method'] = 'PUT';
+        $data['nama_tombol'] = 'UPDATE';
+        return view('user_form', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|min:2',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'password' => 'same:password_confirmation'
+        ]);
+
+        $objek = \App\User::findOrFail($id);
+        $objek->name = $request->name;
+        $objek->email = $request->email;
+        if ($request->password != "") {
+            $objek->password = bcrypt($request->password);
+        }
+        $objek->save();
+        return redirect('admin/user/index')->with('pesan', 'data sudah diupdate');
+    }
+
+    public function hapus($id)
+    {
+        $objek = \App\User::findOrFail($id);
+        $objek->delete();
+        return back()->with('pesan', 'Data berhasil dihapus');
+    }
+
 
 }
