@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BerandaController@index');
 
 Auth::routes();
 
@@ -26,6 +24,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('user/edit/{id}','UserController@edit');
     Route::put('user/update/{id}','UserController@update');
     Route::get('user/hapus/{id}','UserController@hapus');
-
 });
 

@@ -4,5 +4,5 @@ Silahkan Lihat sesuai Branch !
 
 # Outline  
 
-1. Ubah Data
-2. Hapus Data
+1. Menggunakan Template Bootstrap
+2. https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme
